@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "../helpers/json_utils.dart";
 
 class SettingsScreen extends StatefulWidget {
@@ -64,8 +65,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     context: context,
                     applicationName: "MultiplyMe Beta",
                     applicationLegalese:
-                        "© 2022-2023 Annoying Studio\nDeveloped by Janneck",
-                    applicationVersion: "1.0.0")
+                        "© 2022-2023 Annoying Studio\nDeveloped by Janneck Franke, Licenced under the MIT License.",
+                    applicationVersion: "1.0.0",
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                              tooltip: "View GitHub Project",
+                              onPressed: () {},
+                              icon: const FaIcon(FontAwesomeIcons.github)),
+                          IconButton(
+                              tooltip: "View Privacy Policy",
+                              onPressed: () {},
+                              icon: const Icon(Icons.text_snippet))
+                        ],
+                      ),
+                    ])
               },
             ),
             const Divider(
