@@ -1,0 +1,63 @@
+{
+    "appTitle": "QuickMaths Beta",
+    "helloWorld": "Hello World!",
+    "creditsMessage": "Developed by Janneck",
+    "singleTableTitle": "Single Multiplication Table",
+    "singleTableDescription": "Practise a single multiplication table",
+    "multipleTableTitle": "Multiple Multiplication Tables",
+    "multipleTableDescription": "Practise multiple multiplication tables",
+    "shortcutTenTitle": "Tables 1 to 10",
+    "shortcutTenDescription": "Practise all tables from 1 to 10.",
+    "practiseTitle": "Practise",
+    "statisticsTitle": "Statistics",
+    "settingsTitle": "Settings",
+    "statisticsErrorMessage": "Statistics will be a feature in a future version.",
+    "multiplicationTableTable": "Table",
+    "multiplicationTableRangeA": "Range A",
+    "multiplicationTableRangeB": "Range B",
+    "multiplicationTableRandomize": "Randomize Order",
+    "multiplicationTableErrorHeadline": "Hold on…",
+    "multiplicationTableErrorFillInAll": "You have to fill in all 3 fields!",
+    "inProgressProgressDisplay": "Task {current} of {total}",
+    "@inProgressProgressDisplay": {
+        "placeholders": {
+            "current": {},
+            "total": {}
+        }
+    },
+    "resultsHeadline": "Results",
+    "resultsTimeDisplay": "Time: {duration}",
+    "@resultsTimeDisplay": {
+        "placeholders": {
+            "duration": {}
+        }
+    },
+    "multiplicationTableAddTable": "Add table",
+    "multiplicationTableErrorNotEnoughInformation": "You did not give all required information!",
+    "multiplicationTableHeadline": "Multiplication Tables",
+    "multiplicationTableErrorDidNotInputNumber": "You did not input a number!",
+    "multiplicationTableErrorAlreadyAddedTable": "You already added that table!",
+    "inProgressErrorDidNotAnswer": "You did not give an answer!",
+    "inProgressConfirmQuitMessage": "Do you really want to quit?",
+    "resultsHeaderMessage": "Well done! See your results below.",
+    "resultsTotalCorrectMessage": "Correct answers: {totalCorrect} of {total} ({percentage}%}",
+    "@resultsTotalCorrectMessage": {
+        "placeholders": {
+            "totalCorrect": {},
+            "total": {},
+            "percentage": {}
+        }
+    },
+    "resultsTotalWrongMessage": "Wrong answers: {totalWrong} of {total} ({percentage}%}",
+    "@resultsTotalWrongMessage": {
+        "placeholders": {
+            "totalWrong": {},
+            "total": {},
+            "percentage": {}
+        }
+    },
+    "dialogYes": "Yes",
+    "dialogNo": "No",
+    "settingsDeleteStatisticsDataTitle": "Delete statistics data",
+    "settingsDeleteStatisticsDataConfirmationMessage": "Do you really want to delete all your statistics data? This cannot be undone."
+}

@@ -1,0 +1,37 @@
+﻿key,en,de
+appTitle,MultiplyMe Alpha,
+helloWorld,Hello World!,Hallo Welt
+creditsMessage,Developed by Janneck Franke,Entwickelt von Janneck Franke
+singleTableTitle,Single Multiplication Table,Einzelne Einmaleins Reihe
+singleTableDescription,Practise a single multiplication table,Eine einzelne Einmaleins Reihe üben.
+multipleTableTitle,Multiple Multiplication Tables,Mehrere Einmaleins Reihen
+multipleTableDescription,Practise multiple multiplication tables,Mehrere Einmaleins Reihen üben.
+shortcutTenTitle,Tables 1 to 10,Zahlenreihen 1 bis 10
+shortcutTenDescription,Practise all tables from 1 to 10.,Die Zahlenreihen 1 bis 10 jeweils von 1 bis 10 üben.
+practiseTitle,Practise,Üben
+statisticsTitle,Statistics,Statistiken
+settingsTitle,Settings,Einstellungen
+statisticsErrorMessage,Statistics will be a feature in a future version.,Statistiken sind für eine spätere Version geplant.
+multiplicationTableTable,Table,Zahlenreihe
+multiplicationTableRangeA,Start,Start
+multiplicationTableRangeB,End,Ende
+multiplicationTableRandomize,Randomize Order,Zufällige Reihenfolge
+multiplicationTableErrorHeadline,Hold on…,Moment mal…
+multiplicationTableErrorFillInAll,You have to fill in all 3 fields!,Du musst alle 3 Felder ausfüllen!
+inProgressProgressDisplay,Task {current} / {total},Aufgabe {current} / {total}
+resultsHeadline,Results,Ergebnisse
+resultsTimeDisplay,Time: {duration},Zeit: {duration}
+multiplicationTableAddTable,Add table,Zahlenreihe hinzufügen
+multiplicationTableErrorNotEnoughInformation,You did not give all required information!,Du hast nicht alle nötigen Informationen eingegeben!
+multiplicationTableHeadline,Multiplication Tables,Einmaleins Reihen
+multiplicationTableErrorDidNotInputNumber,You did not input a number!,Du hast keine Zahl angegeben!
+multiplicationTableErrorAlreadyAddedTable,You already added that table!,Diese Reihe hast du schon hinzugefügt!
+inProgressErrorDidNotAnswer,You did not give an answer!,Du hast keine Antwort gegeben!
+inProgressConfirmQuitMessage,Do you really want to quit?,Möchtest du wirklich abbrechen?
+resultsHeaderMessage,Well done! See your results below.,Gut gemacht! Die Ergebnisse siehst du unten.
+resultsTotalCorrectMessage,Correct answers: {totalCorrect} of {total} ({percentage}%},Korrekte Antworten: {totalCorrect} von {total} ({percentage}%)
+resultsTotalWrongMessage,Wrong answers: {totalWrong} of {total} ({percentage}%},Falsche Antworten: {totalWrong} von {total} ({percentage}%)
+dialogYes,Yes,Ja
+dialogNo,No,Nein
+settingsDeleteStatisticsDataTitle,Delete statistics data,Statistiken löschen
+settingsDeleteStatisticsDataConfirmationMessage,Do you really want to delete all your statistics data? This cannot be undone.,Möchtest du wirklich deine Statistiken löschen? Dieser Schritt kann nicht rückgängig gemacht werden.

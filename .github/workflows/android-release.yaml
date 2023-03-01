@@ -1,0 +1,71 @@
+name: Build Android Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build-apk:
+    name: Build APK
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: "12.x"
+
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: "master"
+    - run: flutter pub get
+    - run: flutter build apk --release -v
+    - name: Append file to Release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GH_TOKEN }}
+        file: build/app/outputs/flutter-apk/app-release.apk
+        tag: ${{ github.ref }}
+        body: "Flutter APK Build"
+
+  build-windows:
+    name: Build Windows
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2	
+      with:	
+        path: flutter
+        repository: flutter/flutter	
+        ref: master	
+        fetch-depth: 0
+
+    - name: Add Flutter to path
+      shell: pwsh
+      run: echo "$env:GITHUB_WORKSPACE\flutter\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+    - name: Enable desktop support
+      run: flutter config --enable-windows-desktop
+    - name: Run flutter pub get
+      run: flutter pub get
+    - name: Build windows
+      run: flutter build windows --release -v
+
+    - name: Zip Release
+      uses: TheDoctor0/zip-release@0.6.1
+      with:
+        type: "zip"
+        filename: "release-windows.zip"
+        directory: "build/windows/runner/Release"
+
+    - name: Append file to Release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GH_TOKEN }}
+        file: build/windows/runner/Release/release-windows.zip
+        tag: ${{ github.ref }}
+        body: "Flutter Windows Build"
+
+    
