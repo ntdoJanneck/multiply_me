@@ -12,7 +12,6 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   void showConfirmationDialog(
       String title, String content, String answerYes, String answerNo) {
-    int count = 0;
     showDialog(
         context: context,
         builder: (BuildContext ctx) {

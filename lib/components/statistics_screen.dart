@@ -1,12 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import 'package:intl/intl.dart';
 import 'package:multiply_me/classes/analytics_data.dart';
 import 'package:multiply_me/classes/analytics_math_session.dart';
 import 'package:multiply_me/components/detail_analytics_screen.dart';
-import 'package:multiply_me/components/finished_screen.dart';
 import 'package:multiply_me/helpers/save_file_loader.dart';
 
 class StatisticsScreen extends StatefulWidget {
@@ -69,9 +65,6 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var localization =
-        Localizations.of<AppLocalizations>(context, AppLocalizations);
-
     return Scaffold(
       body: Form(
         child: SingleChildScrollView(

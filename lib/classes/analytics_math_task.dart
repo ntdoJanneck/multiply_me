@@ -1,6 +1,4 @@
-import 'package:flutter/services.dart';
 import '../helpers/duration_converter.dart';
-import "package:duration/duration.dart";
 
 class AnalyticsMathTask {
   late double firstFigure;

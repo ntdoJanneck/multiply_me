@@ -1,17 +1,11 @@
-import 'dart:developer';
-import "dart:convert";
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:multiply_me/classes/analytics_data.dart';
 import 'package:multiply_me/classes/analytics_math_session.dart';
 import 'package:multiply_me/classes/analytics_math_task.dart';
-import "../helpers/json_utils.dart";
 import 'package:multiply_me/classes/math_result.dart';
 import 'package:multiply_me/helpers/save_file_loader.dart';
 import 'package:multiply_me/main.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
-import 'package:path_provider/path_provider.dart';
 
 class FinishedScreen extends StatefulWidget {
   const FinishedScreen({Key? key, required this.resultList}) : super(key: key);

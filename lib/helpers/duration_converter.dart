@@ -1,7 +1,5 @@
 library duration_converter;
 
-import 'dart:developer';
-
 class DurationConverter {
   /// Converts a timestamp with the format HH:MM:ss.mmmmmm to a duration.
   static Duration toDuration(String isoString) {
