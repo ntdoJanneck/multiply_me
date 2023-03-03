@@ -34,5 +34,18 @@
     "dialogYes":"Ja",
     "dialogNo":"Nein",
     "settingsDeleteStatisticsDataTitle": "Statistiken löschen",
-    "settingsDeleteStatisticsDataConfirmationMessage": "Möchtest du wirklich deine Statistiken löschen? Dieser Schritt kann nicht rückgängig gemacht werden."
+    "settingsDeleteStatisticsDataConfirmationMessage": "Möchtest du wirklich deine Statistiken löschen? Dieser Schritt kann nicht rückgängig gemacht werden.",
+    "settingsAboutViewSourceCode": "Quellcode auf GitHub ansehen",
+    "settingsAboutViewPrivacyPolicy": "Datenschutzerklärung ansehen",
+    "settingsAboutViewLegalese": "2023 veröffentlicht durch Annoying Studio.\nEntwickelt von Janneck Franke, lizensiert unter der MIT-Lizenz.",
+    "settingsAboutViewErrorUriContent": "Der URL ({url}) konnte nicht geöffnet werden.",
+    "@settingsAboutViewErrorUriContent": {
+        "placeholders": {
+            "url": {
+                "type": "String",
+                "example": "unbekannt"
+            }
+        }
+    },
+    "settingsAboutViewErrorUriHeadline": "Fehler beim öffnen"
 }

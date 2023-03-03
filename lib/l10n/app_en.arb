@@ -59,5 +59,18 @@
     "dialogYes": "Yes",
     "dialogNo": "No",
     "settingsDeleteStatisticsDataTitle": "Delete statistics data",
-    "settingsDeleteStatisticsDataConfirmationMessage": "Do you really want to delete all your statistics data? This cannot be undone."
+    "settingsDeleteStatisticsDataConfirmationMessage": "Do you really want to delete all your statistics data? This cannot be undone.",
+    "settingsAboutViewSourceCode": "View source code on GitHub",
+    "settingsAboutViewPrivacyPolicy": "View privacy policy",
+    "settingsAboutViewLegalese": "Released by Annoying Studio in 2023.\nDeveloped by Janneck Franke, licensed under the MIT-license.",
+    "settingsAboutViewErrorUriContent": "Couldn't open the URL ({url}).",
+    "@settingsAboutViewErrorUriContent": {
+        "placeholders": {
+            "url": {
+                "type": "String",
+                "example": "unknown"
+            }
+        }
+    },
+    "settingsAboutViewErrorUriHeadline": "Opening URL failed"
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "../helpers/json_utils.dart";
+import '../helpers/url_helper.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -36,6 +37,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
         });
   }
 
+  void showAlertBox(String title, String content) {
+    showDialog(
+        context: context,
+        builder: (BuildContext ctx) {
+          return AlertDialog(
+            title: Text(title),
+            content: Text(content),
+            actions: [
+              TextButton(
+                  onPressed: () => {Navigator.pop(context)},
+                  child: const Text("Okay"))
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     var localization =
@@ -64,21 +81,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 showAboutDialog(
                     context: context,
                     applicationName: "MultiplyMe Beta",
-                    applicationLegalese:
-                        "© 2022-2023 Annoying Studio\nDeveloped by Janneck Franke, Licenced under the MIT License.",
+                    applicationLegalese: localization.settingsAboutViewLegalese,
                     applicationVersion: "1.0.0",
                     children: [
-                      Row(
-                        children: [
-                          IconButton(
-                              tooltip: "View GitHub Project",
-                              onPressed: () {},
-                              icon: const FaIcon(FontAwesomeIcons.github)),
-                          IconButton(
-                              tooltip: "View Privacy Policy",
-                              onPressed: () {},
-                              icon: const Icon(Icons.text_snippet))
-                        ],
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Divider(),
+                      ListTile(
+                        leading: const FaIcon(FontAwesomeIcons.github),
+                        title: Text(localization.settingsAboutViewSourceCode),
+                        onTap: () async {
+                          String url = "https://github.com/";
+                          bool openResult =
+                              await UrlHelper.loadUrl(Uri.parse(url));
+                          if (!openResult) {
+                            showAlertBox(
+                                localization.settingsAboutViewErrorUriHeadline,
+                                localization
+                                    .settingsAboutViewErrorUriContent(url));
+                          }
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.text_snippet),
+                        title:
+                            Text(localization.settingsAboutViewPrivacyPolicy),
+                        onTap: () {},
                       ),
                     ])
               },
