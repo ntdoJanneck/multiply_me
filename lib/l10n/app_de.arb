@@ -47,5 +47,6 @@
             }
         }
     },
-    "settingsAboutViewErrorUriHeadline": "Fehler beim öffnen"
+    "settingsAboutViewErrorUriHeadline": "Fehler beim öffnen",
+    "settingsAboutViewFontLicense": "Schriftart (Roboto) Lizenz"
 }

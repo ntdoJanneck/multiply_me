@@ -72,5 +72,6 @@
             }
         }
     },
-    "settingsAboutViewErrorUriHeadline": "Opening URL failed"
+    "settingsAboutViewErrorUriHeadline": "Opening URL failed",
+    "settingsAboutViewFontLicense": "Font (Roboto) license"
 }

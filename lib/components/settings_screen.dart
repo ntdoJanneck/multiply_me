@@ -89,7 +89,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ),
                       const Divider(),
                       ListTile(
-                        leading: const FaIcon(FontAwesomeIcons.github),
+                        leading: const Icon(Icons.code_sharp),
                         title: Text(localization.settingsAboutViewSourceCode),
                         onTap: () async {
                           String url = "https://github.com/";
@@ -104,11 +104,38 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         },
                       ),
                       ListTile(
-                        leading: const Icon(Icons.text_snippet),
+                        leading: const Icon(Icons.shield_outlined),
                         title:
                             Text(localization.settingsAboutViewPrivacyPolicy),
-                        onTap: () {},
+                        onTap: () async {
+                          String url = "https://github.com/";
+                          bool openResult =
+                              await UrlHelper.loadUrl(Uri.parse(url));
+                          if (!openResult) {
+                            showAlertBox(
+                                localization.settingsAboutViewErrorUriHeadline,
+                                localization
+                                    .settingsAboutViewErrorUriContent(url));
+                          }
+                        },
                       ),
+                      Divider(),
+                      ListTile(
+                        leading: const Icon(Icons.font_download_outlined),
+                        title: Text(localization.settingsAboutViewFontLicense),
+                        onTap: () async {
+                          String url =
+                              "https://github.com/googlefonts/roboto/blob/main/LICENSE";
+                          bool openResult =
+                              await UrlHelper.loadUrl(Uri.parse(url));
+                          if (!openResult) {
+                            showAlertBox(
+                                localization.settingsAboutViewErrorUriHeadline,
+                                localization
+                                    .settingsAboutViewErrorUriContent(url));
+                          }
+                        },
+                      )
                     ])
               },
             ),
