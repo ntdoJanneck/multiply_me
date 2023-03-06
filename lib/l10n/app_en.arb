@@ -73,5 +73,8 @@
         }
     },
     "settingsAboutViewErrorUriHeadline": "Opening URL failed",
-    "settingsAboutViewFontLicense": "Font (Roboto) license"
+    "settingsAboutViewFontLicense": "Font (Roboto) license",
+    "settingsViewImprintTitle": "Imprint",
+    "settingsAboutViewTitle": "About",
+    "settingsImprintClose": "CLOSE"
 }

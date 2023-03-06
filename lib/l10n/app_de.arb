@@ -48,5 +48,8 @@
         }
     },
     "settingsAboutViewErrorUriHeadline": "Fehler beim öffnen",
-    "settingsAboutViewFontLicense": "Schriftart (Roboto) Lizenz"
+    "settingsAboutViewFontLicense": "Schriftart (Roboto) Lizenz",
+    "settingsViewImprintTitle": "Impressum",
+    "settingsAboutViewTitle": "Über diese App",
+    "settingsImprintClose": "SCHLIEßEN"
 }

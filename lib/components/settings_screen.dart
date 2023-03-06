@@ -3,6 +3,7 @@ import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "../helpers/json_utils.dart";
 import '../helpers/url_helper.dart';
+import "../helpers/imprint_dialog.dart";
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -74,9 +75,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     localization.dialogNo)
               },
             ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.description_outlined),
+              title: Text(localization.settingsViewImprintTitle),
+              onTap: () => ImprintDialog.buildImprint(context),
+            ),
             ListTile(
               leading: const Icon(Icons.info_outline),
-              title: const Text("About"),
+              title: Text(localization.settingsAboutViewTitle),
               onTap: () => {
                 showAboutDialog(
                     context: context,
@@ -88,21 +95,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         height: 15,
                       ),
                       const Divider(),
-                      ListTile(
-                        leading: const Icon(Icons.code_sharp),
-                        title: Text(localization.settingsAboutViewSourceCode),
-                        onTap: () async {
-                          String url = "https://github.com/";
-                          bool openResult =
-                              await UrlHelper.loadUrl(Uri.parse(url));
-                          if (!openResult) {
-                            showAlertBox(
-                                localization.settingsAboutViewErrorUriHeadline,
-                                localization
-                                    .settingsAboutViewErrorUriContent(url));
-                          }
-                        },
-                      ),
+                      // ListTile(
+                      //   leading: const Icon(Icons.code_sharp),
+                      //   title: Text(localization.settingsAboutViewSourceCode),
+                      //   onTap: () async {
+                      //     String url = "https://github.com/";
+                      //     bool openResult =
+                      //         await UrlHelper.loadUrl(Uri.parse(url));
+                      //     if (!openResult) {
+                      //       showAlertBox(
+                      //           localization.settingsAboutViewErrorUriHeadline,
+                      //           localization
+                      //               .settingsAboutViewErrorUriContent(url));
+                      //     }
+                      //   },
+                      // ),
                       ListTile(
                         leading: const Icon(Icons.shield_outlined),
                         title:
@@ -138,12 +145,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       )
                     ])
               },
-            ),
-            const Divider(
-              height: 10,
-            ),
-            const SizedBox(
-              height: 20,
             ),
           ],
         ),
