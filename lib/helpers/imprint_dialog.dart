@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import "package:flutter/services.dart";
 
 class ImprintDialog {
-  static Future<void> buildImprint(BuildContext context) {
+  static Future<void> buildImprint(BuildContext context) async {
     var localization =
         Localizations.of<AppLocalizations>(context, AppLocalizations);
+    String imprintText = await ImprintDialog.getImprintText();
     return showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(localization!.settingsViewImprintTitle),
-          content: const Text("Lorem ipsum dolor sit amet"),
+          content: Text(imprintText),
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context),
@@ -19,5 +21,13 @@ class ImprintDialog {
         );
       },
     );
+  }
+
+  static Future<String> getImprintText() async {
+    try {
+      return await rootBundle.loadString("assets/imprint.md");
+    } catch (e) {
+      return "No imprint!";
+    }
   }
 }
