@@ -17,7 +17,6 @@ class ImprintDialog {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                //TODO: THIS DOESNT WORK
                 MarkdownBody(
                   data: imprintText,
                   shrinkWrap: true,
