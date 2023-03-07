@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import "package:flutter/services.dart";
+import "package:flutter_markdown/flutter_markdown.dart";
 
 class ImprintDialog {
   static Future<void> buildImprint(BuildContext context) async {
@@ -12,7 +13,16 @@ class ImprintDialog {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(localization!.settingsViewImprintTitle),
-          content: Text(imprintText),
+          content: SingleChildScrollView(
+            child: Column(
+              children: [
+                //TODO: THIS DOESNT WORK
+                const Markdown(
+                  data: "arsch",
+                )
+              ],
+            ),
+          ),
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context),
