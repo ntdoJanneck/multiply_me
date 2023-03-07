@@ -15,10 +15,12 @@ class ImprintDialog {
           title: Text(localization!.settingsViewImprintTitle),
           content: SingleChildScrollView(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 //TODO: THIS DOESNT WORK
-                const Markdown(
-                  data: "arsch",
+                MarkdownBody(
+                  data: imprintText,
+                  shrinkWrap: true,
                 )
               ],
             ),
