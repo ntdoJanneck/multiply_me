@@ -115,7 +115,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         title:
                             Text(localization.settingsAboutViewPrivacyPolicy),
                         onTap: () async {
-                          String url = "https://github.com/";
+                          String url =
+                              "https://github.com/ntdoJanneck/multiply_me/blob/main/PRIVACY.md";
                           bool openResult =
                               await UrlHelper.loadUrl(Uri.parse(url));
                           if (!openResult) {
@@ -126,7 +127,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           }
                         },
                       ),
-                      Divider(),
+                      const Divider(),
                       ListTile(
                         leading: const Icon(Icons.font_download_outlined),
                         title: Text(localization.settingsAboutViewFontLicense),
