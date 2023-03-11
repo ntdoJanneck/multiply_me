@@ -95,21 +95,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         height: 15,
                       ),
                       const Divider(),
-                      // ListTile(
-                      //   leading: const Icon(Icons.code_sharp),
-                      //   title: Text(localization.settingsAboutViewSourceCode),
-                      //   onTap: () async {
-                      //     String url = "https://github.com/";
-                      //     bool openResult =
-                      //         await UrlHelper.loadUrl(Uri.parse(url));
-                      //     if (!openResult) {
-                      //       showAlertBox(
-                      //           localization.settingsAboutViewErrorUriHeadline,
-                      //           localization
-                      //               .settingsAboutViewErrorUriContent(url));
-                      //     }
-                      //   },
-                      // ),
+                      ListTile(
+                        leading: const Icon(Icons.code_sharp),
+                        title: Text(localization.settingsAboutViewSourceCode),
+                        onTap: () async {
+                          String url =
+                              "https://github.com/ntdoJanneck/multiply_me/";
+                          bool openResult =
+                              await UrlHelper.loadUrl(Uri.parse(url));
+                          if (!openResult) {
+                            showAlertBox(
+                                localization.settingsAboutViewErrorUriHeadline,
+                                localization
+                                    .settingsAboutViewErrorUriContent(url));
+                          }
+                        },
+                      ),
                       ListTile(
                         leading: const Icon(Icons.shield_outlined),
                         title:
