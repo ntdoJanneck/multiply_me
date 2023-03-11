@@ -47,3 +47,5 @@ app.*.map.json
 
 # Ignore imprint.md
 assets/imprint.md
+
+upload-keystore.jks
