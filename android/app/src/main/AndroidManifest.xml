@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.AnnoyingStudio.multiply_me">
+    <!-- Provide required visibility configuration for API level 30 and above -->
+<queries>
+</queries>
    <application
         android:label="MultiplyMe"
         android:name="${applicationName}"
