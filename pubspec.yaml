@@ -3,7 +3,7 @@ description: Test
 
 publish_to: 'none' 
 
-version: 0.1.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ">=2.16.0-21.0.dev <3.0.0"

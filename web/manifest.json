@@ -1,6 +1,6 @@
 {
-    "name": "QuickMaths",
-    "short_name": "QuickMaths",
+    "name": "MultiplyMe",
+    "short_name": "MultiplyMe",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
