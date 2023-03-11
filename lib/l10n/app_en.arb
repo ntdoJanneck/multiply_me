@@ -13,11 +13,12 @@
     "settingsTitle": "Settings",
     "statisticsErrorMessage": "Statistics will be a feature in a future version.",
     "multiplicationTableTable": "Table",
-    "multiplicationTableRangeA": "Range A",
-    "multiplicationTableRangeB": "Range B",
+    "multiplicationTableRangeA": "Range start",
+    "multiplicationTableRangeB": "Range end",
     "multiplicationTableRandomize": "Randomize Order",
     "multiplicationTableErrorHeadline": "Hold on…",
     "multiplicationTableErrorFillInAll": "You have to fill in all 3 fields!",
+    "multiplicationTableErrorRangeAGreater": "The range start has to be smaller than the range end!",
     "inProgressProgressDisplay": "Task {current} of {total}",
     "@inProgressProgressDisplay": {
         "placeholders": {
@@ -62,7 +63,7 @@
     "settingsDeleteStatisticsDataConfirmationMessage": "Do you really want to delete all your statistics data? This cannot be undone.",
     "settingsAboutViewSourceCode": "View source code on GitHub",
     "settingsAboutViewPrivacyPolicy": "View privacy policy",
-    "settingsAboutViewLegalese": "Released by Annoying Studio in 2023.\nDeveloped by Janneck Franke, licensed under the MIT-license.",
+    "settingsAboutViewLegalese": "© 2023 Janneck Franke, licensed under the MIT-license.",
     "settingsAboutViewErrorUriContent": "Couldn't open the URL ({url}).",
     "@settingsAboutViewErrorUriContent": {
         "placeholders": {
