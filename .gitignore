@@ -44,3 +44,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignore imprint.md
+assets/imprint.md
+
+upload-keystore.jks

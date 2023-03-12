@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:multiply_me/classes/analytics_math_task.dart';
-import 'package:multiply_me/classes/math_task.dart';
 
 class MathSession {
   late DateTime sessionDate;

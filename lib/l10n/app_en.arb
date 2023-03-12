@@ -1,5 +1,5 @@
 {
-    "appTitle": "QuickMaths Beta",
+    "appTitle": "MultiplyMe",
     "helloWorld": "Hello World!",
     "creditsMessage": "Developed by Janneck",
     "singleTableTitle": "Single Multiplication Table",
@@ -13,11 +13,12 @@
     "settingsTitle": "Settings",
     "statisticsErrorMessage": "Statistics will be a feature in a future version.",
     "multiplicationTableTable": "Table",
-    "multiplicationTableRangeA": "Range A",
-    "multiplicationTableRangeB": "Range B",
+    "multiplicationTableRangeA": "Range start",
+    "multiplicationTableRangeB": "Range end",
     "multiplicationTableRandomize": "Randomize Order",
     "multiplicationTableErrorHeadline": "Hold on…",
     "multiplicationTableErrorFillInAll": "You have to fill in all 3 fields!",
+    "multiplicationTableErrorRangeAGreater": "The range start has to be smaller than the range end!",
     "inProgressProgressDisplay": "Task {current} of {total}",
     "@inProgressProgressDisplay": {
         "placeholders": {
@@ -59,5 +60,22 @@
     "dialogYes": "Yes",
     "dialogNo": "No",
     "settingsDeleteStatisticsDataTitle": "Delete statistics data",
-    "settingsDeleteStatisticsDataConfirmationMessage": "Do you really want to delete all your statistics data? This cannot be undone."
+    "settingsDeleteStatisticsDataConfirmationMessage": "Do you really want to delete all your statistics data? This cannot be undone.",
+    "settingsAboutViewSourceCode": "View source code on GitHub",
+    "settingsAboutViewPrivacyPolicy": "View privacy policy",
+    "settingsAboutViewLegalese": "© 2023 Janneck Franke, licensed under the MIT-license.",
+    "settingsAboutViewErrorUriContent": "Couldn't open the URL ({url}).",
+    "@settingsAboutViewErrorUriContent": {
+        "placeholders": {
+            "url": {
+                "type": "String",
+                "example": "unknown"
+            }
+        }
+    },
+    "settingsAboutViewErrorUriHeadline": "Opening URL failed",
+    "settingsAboutViewFontLicense": "Font (Roboto) license",
+    "settingsViewImprintTitle": "Imprint",
+    "settingsAboutViewTitle": "About",
+    "settingsImprintClose": "CLOSE"
 }

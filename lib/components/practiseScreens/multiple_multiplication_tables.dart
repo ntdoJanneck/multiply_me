@@ -1,9 +1,13 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:multiply_me/classes/math_task.dart';
 import 'package:multiply_me/components/in_progress_screen.dart';
 
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
+
+import '../../helpers/dialog_helper.dart';
 
 class MultipleMultiplicationTables extends StatefulWidget {
   const MultipleMultiplicationTables({Key? key}) : super(key: key);
@@ -35,52 +39,52 @@ class _MultipleMultiplicationTablesState
   void startPractise(BuildContext context) {
     var localization =
         Localizations.of<AppLocalizations>(context, AppLocalizations);
-    if (rangeANumberController.text != "" &&
-        rangeBNumberController.text != "" &&
-        tables.isNotEmpty) {
-      double rangeA = double.parse(rangeANumberController.text);
-      double rangeB = double.parse(rangeBNumberController.text);
 
-      List<MathTask> taskItems = <MathTask>[];
+    double rangeA = -1;
+    double rangeB = -1;
 
-      for (double table in tables) {
-        for (double i = rangeA; i <= rangeB; i++) {
-          taskItems.add(MathTask(i, table, "×"));
-        }
-      }
-
-      if (randomizeValue) {
-        taskItems.shuffle();
-      }
-
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => InProgressScreen(
-            taskList: taskItems,
-          ),
-        ),
+    if (rangeANumberController.text == "" ||
+        rangeBNumberController.text == "" ||
+        tables.isEmpty) {
+      DialogHelper.showInfoDialog(
+        context,
+        localization!.multiplicationTableErrorHeadline,
+        localization.multiplicationTableErrorFillInAll,
       );
-    } else {
-      showAlertBox(localization!.multiplicationTableErrorHeadline,
-          localization.multiplicationTableErrorNotEnoughInformation);
+      return;
     }
-  }
 
-  /// Shows a simple alert with an "okay" button (no yes/no options, just for warnings!)
-  void showAlertBox(String title, String content) {
-    showDialog(
-        context: context,
-        builder: (BuildContext ctx) {
-          return AlertDialog(
-            title: Text(title),
-            content: Text(content),
-            actions: [
-              TextButton(
-                  onPressed: () => {Navigator.pop(context)},
-                  child: const Text("Okay"))
-            ],
-          );
-        });
+    rangeA = double.parse(rangeANumberController.text);
+    rangeB = double.parse(rangeBNumberController.text);
+
+    if (rangeA > rangeB) {
+      DialogHelper.showInfoDialog(
+        context,
+        localization!.multiplicationTableErrorHeadline,
+        localization.multiplicationTableErrorRangeAGreater,
+      );
+      return;
+    }
+
+    List<MathTask> taskItems = <MathTask>[];
+
+    for (double table in tables) {
+      for (double i = rangeA; i <= rangeB; i++) {
+        taskItems.add(MathTask(i, table, "×"));
+      }
+    }
+
+    if (randomizeValue) {
+      taskItems.shuffle();
+    }
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => InProgressScreen(
+          taskList: taskItems,
+        ),
+      ),
+    );
   }
 
   /// Returns a list of cards for each element in the input
@@ -161,13 +165,15 @@ class _MultipleMultiplicationTablesState
                           color: Colors.white,
                           onPressed: () {
                             if (tableInputController.text == "") {
-                              showAlertBox(
+                              DialogHelper.showInfoDialog(
+                                  context,
                                   localization.multiplicationTableErrorHeadline,
                                   localization
                                       .multiplicationTableErrorDidNotInputNumber);
                             } else if (tables.contains(
                                 double.parse(tableInputController.text))) {
-                              showAlertBox(
+                              DialogHelper.showInfoDialog(
+                                  context,
                                   localization.multiplicationTableErrorHeadline,
                                   localization
                                       .multiplicationTableErrorAlreadyAddedTable);

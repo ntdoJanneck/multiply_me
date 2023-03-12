@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:multiply_me/classes/math_task.dart';
 import 'package:multiply_me/components/in_progress_screen.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import 'package:multiply_me/helpers/dialog_helper.dart';
 
 class MultiplicationTablesScreen extends StatefulWidget {
   const MultiplicationTablesScreen({Key? key}) : super(key: key);
@@ -22,48 +23,56 @@ class _MultiplicationTablesScreenState
 
   /// Start a practise round
   void startPractise() {
+    var localization =
+        Localizations.of<AppLocalizations>(context, AppLocalizations);
+
     // Parse Numbers
-    if (baseNumberController.text != "" &&
-        rangeANumberController.text != "" &&
-        rangeBNumberController.text != "") {
-      double base = double.parse(baseNumberController.text);
-      double rangeA = double.parse(rangeANumberController.text);
-      double rangeB = double.parse(rangeBNumberController.text);
-      List<MathTask> taskItems = <MathTask>[];
+    double base = -1;
+    double rangeA = -1;
+    double rangeB = -1;
 
-      // Generate Tasks
-      for (double i = rangeA; i <= rangeB; i++) {
-        taskItems.add(MathTask(i, base, "×"));
-      }
-
-      if (randomizeValue) {
-        taskItems.shuffle();
-      }
-
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => InProgressScreen(
-            taskList: taskItems,
-          ),
-        ),
+    if (baseNumberController.text == "" ||
+        rangeANumberController.text == "" ||
+        rangeBNumberController.text == "") {
+      DialogHelper.showInfoDialog(
+        context,
+        localization!.multiplicationTableErrorHeadline,
+        localization.multiplicationTableErrorFillInAll,
       );
-    } else {
-      showDialog(
-          context: context,
-          builder: (BuildContext ctx) {
-            var localization =
-                Localizations.of<AppLocalizations>(context, AppLocalizations);
-            return AlertDialog(
-              title: Text(localization!.multiplicationTableErrorHeadline),
-              content: Text(localization.multiplicationTableErrorFillInAll),
-              actions: [
-                TextButton(
-                    onPressed: () => {Navigator.pop(context)},
-                    child: const Text("Okay"))
-              ],
-            );
-          });
+      return;
     }
+
+    base = double.parse(baseNumberController.text);
+    rangeA = double.parse(rangeANumberController.text);
+    rangeB = double.parse(rangeBNumberController.text);
+
+    if (rangeA > rangeB) {
+      DialogHelper.showInfoDialog(
+        context,
+        localization!.multiplicationTableErrorHeadline,
+        localization.multiplicationTableErrorRangeAGreater,
+      );
+      return;
+    }
+
+    List<MathTask> taskItems = <MathTask>[];
+
+    // Generate Tasks
+    for (double i = rangeA; i <= rangeB; i++) {
+      taskItems.add(MathTask(i, base, "×"));
+    }
+
+    if (randomizeValue) {
+      taskItems.shuffle();
+    }
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => InProgressScreen(
+          taskList: taskItems,
+        ),
+      ),
+    );
   }
 
   @override

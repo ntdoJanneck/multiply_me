@@ -23,6 +23,7 @@
     "resultsTimeDisplay":"Zeit: {duration}",
     "multiplicationTableAddTable":"Zahlenreihe hinzufügen",
     "multiplicationTableErrorNotEnoughInformation":"Du hast nicht alle nötigen Informationen eingegeben!",
+    "multiplicationTableErrorRangeAGreater": "Die Start-Zahl muss kleiner sein als die End-Zahl!",
     "multiplicationTableHeadline":"Einmaleins Reihen",
     "multiplicationTableErrorDidNotInputNumber": "Du hast keine Zahl angegeben!",
     "multiplicationTableErrorAlreadyAddedTable":"Diese Reihe hast du schon hinzugefügt!",
@@ -34,5 +35,22 @@
     "dialogYes":"Ja",
     "dialogNo":"Nein",
     "settingsDeleteStatisticsDataTitle": "Statistiken löschen",
-    "settingsDeleteStatisticsDataConfirmationMessage": "Möchtest du wirklich deine Statistiken löschen? Dieser Schritt kann nicht rückgängig gemacht werden."
+    "settingsDeleteStatisticsDataConfirmationMessage": "Möchtest du wirklich deine Statistiken löschen? Dieser Schritt kann nicht rückgängig gemacht werden.",
+    "settingsAboutViewSourceCode": "Quellcode auf GitHub ansehen",
+    "settingsAboutViewPrivacyPolicy": "Datenschutzerklärung ansehen",
+    "settingsAboutViewLegalese": "© 2023 Janneck Franke, lizensiert unter der MIT-Lizenz.",
+    "settingsAboutViewErrorUriContent": "Der URL ({url}) konnte nicht geöffnet werden.",
+    "@settingsAboutViewErrorUriContent": {
+        "placeholders": {
+            "url": {
+                "type": "String",
+                "example": "unbekannt"
+            }
+        }
+    },
+    "settingsAboutViewErrorUriHeadline": "Fehler beim öffnen",
+    "settingsAboutViewFontLicense": "Schriftart (Roboto) Lizenz",
+    "settingsViewImprintTitle": "Impressum",
+    "settingsAboutViewTitle": "Über diese App",
+    "settingsImprintClose": "SCHLIEßEN"
 }

@@ -14,7 +14,7 @@ class DetailAnalyticsScreen extends StatefulWidget {
 
 class _DetailAnalyticsScreenState extends State<DetailAnalyticsScreen> {
   List<AnalyticsMathTask> analyticsList = [];
-  Duration totalDuration = Duration();
+  Duration totalDuration = const Duration();
 
   void finishSession() {
     Navigator.of(context).pop();
