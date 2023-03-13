@@ -87,7 +87,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               onTap: () => {
                 showAboutDialog(
                     context: context,
-                    applicationName: "MultiplyMe Beta",
+                    applicationName: "MultiplyMe",
                     applicationLegalese: localization.settingsAboutViewLegalese,
                     applicationVersion: "1.0.0",
                     children: [
