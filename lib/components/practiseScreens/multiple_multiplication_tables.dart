@@ -92,26 +92,17 @@ class _MultipleMultiplicationTablesState
     List<Widget> result = <Widget>[];
     for (double item in input) {
       result.add(
-        Card(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ListTile(
-                onTap: () {
-                  setState(() {
-                    tables.remove(item);
-                  });
-                },
-                title: Text(item.toStringAsFixed(0)),
-                trailing: const Icon(
-                  Icons.delete,
-                  color: Colors.red,
-                  size: 20,
-                ),
-              ),
-            ],
+        ActionChip(
+          label: Text(item.toStringAsFixed(0)),
+          avatar: const Icon(
+            Icons.close,
+            color: Colors.red,
           ),
+          onPressed: () {
+            setState(() {
+              tables.remove(item);
+            });
+          },
         ),
       );
     }
@@ -192,13 +183,16 @@ class _MultipleMultiplicationTablesState
                   const SizedBox(
                     height: 10,
                   ),
-                  SizedBox(
-                    height: 200,
-                    child: GridView(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4, childAspectRatio: 1.7),
-                      children: buildGridItems(tables),
+                  SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        Wrap(
+                          spacing: 8.0,
+                          runSpacing: 4.0,
+                          direction: Axis.horizontal,
+                          children: buildGridItems(tables),
+                        )
+                      ],
                     ),
                   ),
                   const SizedBox(
