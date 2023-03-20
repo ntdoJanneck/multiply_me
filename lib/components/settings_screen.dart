@@ -89,7 +89,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     context: context,
                     applicationName: "MultiplyMe",
                     applicationLegalese: localization.settingsAboutViewLegalese,
-                    applicationVersion: "1.0.0",
+                    applicationVersion: "1.0.1",
                     children: [
                       const SizedBox(
                         height: 15,
