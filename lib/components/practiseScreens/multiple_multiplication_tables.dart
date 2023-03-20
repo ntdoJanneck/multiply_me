@@ -109,6 +109,30 @@ class _MultipleMultiplicationTablesState
     return result;
   }
 
+  void handleAddTableInput() {
+    var localization =
+        Localizations.of<AppLocalizations>(context, AppLocalizations);
+
+    if (tableInputController.text == "") {
+      DialogHelper.showInfoDialog(
+          context,
+          localization!.multiplicationTableErrorHeadline,
+          localization.multiplicationTableErrorDidNotInputNumber);
+    } else if (tables.contains(double.parse(tableInputController.text))) {
+      DialogHelper.showInfoDialog(
+          context,
+          localization!.multiplicationTableErrorHeadline,
+          localization.multiplicationTableErrorAlreadyAddedTable);
+    } else {
+      setState(
+        () {
+          tables.add(double.parse(tableInputController.text));
+          tableInputController.clear();
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var localization =
@@ -143,6 +167,9 @@ class _MultipleMultiplicationTablesState
                               labelText:
                                   localization.multiplicationTableAddTable),
                           controller: tableInputController,
+                          onSubmitted: (input) {
+                            handleAddTableInput();
+                          },
                         ),
                       ),
                       const SizedBox(
@@ -153,29 +180,7 @@ class _MultipleMultiplicationTablesState
                             const ShapeDecoration(shape: CircleBorder()),
                         child: IconButton(
                           icon: const Icon(Icons.add),
-                          color: Colors.white,
-                          onPressed: () {
-                            if (tableInputController.text == "") {
-                              DialogHelper.showInfoDialog(
-                                  context,
-                                  localization.multiplicationTableErrorHeadline,
-                                  localization
-                                      .multiplicationTableErrorDidNotInputNumber);
-                            } else if (tables.contains(
-                                double.parse(tableInputController.text))) {
-                              DialogHelper.showInfoDialog(
-                                  context,
-                                  localization.multiplicationTableErrorHeadline,
-                                  localization
-                                      .multiplicationTableErrorAlreadyAddedTable);
-                            } else {
-                              setState(() {
-                                tables.add(
-                                    double.parse(tableInputController.text));
-                                tableInputController.clear();
-                              });
-                            }
-                          },
+                          onPressed: handleAddTableInput,
                         ),
                       ),
                     ],
