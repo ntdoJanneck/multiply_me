@@ -1,9 +1,9 @@
 name: multiply_me
-description: Test
+description: Multiply your math skills!
 
 publish_to: 'none' 
 
-version: 1.0.0+4
+version: 1.0.1+5
 
 environment:
   sdk: ">=2.16.0-21.0.dev <3.0.0"
