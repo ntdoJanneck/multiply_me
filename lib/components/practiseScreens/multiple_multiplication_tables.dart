@@ -92,30 +92,45 @@ class _MultipleMultiplicationTablesState
     List<Widget> result = <Widget>[];
     for (double item in input) {
       result.add(
-        Card(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ListTile(
-                onTap: () {
-                  setState(() {
-                    tables.remove(item);
-                  });
-                },
-                title: Text(item.toStringAsFixed(0)),
-                trailing: const Icon(
-                  Icons.delete,
-                  color: Colors.red,
-                  size: 20,
-                ),
-              ),
-            ],
+        ActionChip(
+          label: Text(item.toStringAsFixed(0)),
+          avatar: const Icon(
+            Icons.close,
+            color: Colors.red,
           ),
+          onPressed: () {
+            setState(() {
+              tables.remove(item);
+            });
+          },
         ),
       );
     }
     return result;
+  }
+
+  void handleAddTableInput() {
+    var localization =
+        Localizations.of<AppLocalizations>(context, AppLocalizations);
+
+    if (tableInputController.text == "") {
+      DialogHelper.showInfoDialog(
+          context,
+          localization!.multiplicationTableErrorHeadline,
+          localization.multiplicationTableErrorDidNotInputNumber);
+    } else if (tables.contains(double.parse(tableInputController.text))) {
+      DialogHelper.showInfoDialog(
+          context,
+          localization!.multiplicationTableErrorHeadline,
+          localization.multiplicationTableErrorAlreadyAddedTable);
+    } else {
+      setState(
+        () {
+          tables.add(double.parse(tableInputController.text));
+          tableInputController.clear();
+        },
+      );
+    }
   }
 
   @override
@@ -152,6 +167,9 @@ class _MultipleMultiplicationTablesState
                               labelText:
                                   localization.multiplicationTableAddTable),
                           controller: tableInputController,
+                          onSubmitted: (input) {
+                            handleAddTableInput();
+                          },
                         ),
                       ),
                       const SizedBox(
@@ -162,29 +180,7 @@ class _MultipleMultiplicationTablesState
                             const ShapeDecoration(shape: CircleBorder()),
                         child: IconButton(
                           icon: const Icon(Icons.add),
-                          color: Colors.white,
-                          onPressed: () {
-                            if (tableInputController.text == "") {
-                              DialogHelper.showInfoDialog(
-                                  context,
-                                  localization.multiplicationTableErrorHeadline,
-                                  localization
-                                      .multiplicationTableErrorDidNotInputNumber);
-                            } else if (tables.contains(
-                                double.parse(tableInputController.text))) {
-                              DialogHelper.showInfoDialog(
-                                  context,
-                                  localization.multiplicationTableErrorHeadline,
-                                  localization
-                                      .multiplicationTableErrorAlreadyAddedTable);
-                            } else {
-                              setState(() {
-                                tables.add(
-                                    double.parse(tableInputController.text));
-                                tableInputController.clear();
-                              });
-                            }
-                          },
+                          onPressed: handleAddTableInput,
                         ),
                       ),
                     ],
@@ -192,13 +188,16 @@ class _MultipleMultiplicationTablesState
                   const SizedBox(
                     height: 10,
                   ),
-                  SizedBox(
-                    height: 200,
-                    child: GridView(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4, childAspectRatio: 1.7),
-                      children: buildGridItems(tables),
+                  SingleChildScrollView(
+                    child: Column(
+                      children: <Widget>[
+                        Wrap(
+                          spacing: 8.0,
+                          runSpacing: 4.0,
+                          direction: Axis.horizontal,
+                          children: buildGridItems(tables),
+                        )
+                      ],
                     ),
                   ),
                   const SizedBox(
