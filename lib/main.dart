@@ -36,6 +36,7 @@ class MultiplyMe extends StatelessWidget {
           useMaterial3: true,
           colorScheme: lightColorScheme,
           brightness: Brightness.light),
+      themeMode: ThemeMode.light,
       home: const MainApp(),
     );
   }
