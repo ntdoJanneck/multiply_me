@@ -22,6 +22,7 @@ dependencies:
   url_launcher: ^6.1.10
   flutter_markdown: ^0.6.14
   shared_preferences: ^2.1.0
+  provider: ^6.0.5
   
 
 dev_dependencies:
