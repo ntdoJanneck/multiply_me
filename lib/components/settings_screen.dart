@@ -43,20 +43,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<ThemeMode?> showThemeDialog(
-      BuildContext context, ThemeMode preset, ThemeModel themeModel) async {
+      BuildContext context, ThemeModel themeModel) async {
+    var localization =
+        Localizations.of<AppLocalizations>(context, AppLocalizations);
     ThemeMode? result = await showDialog(
       context: context,
       builder: (BuildContext ctx) {
-        ThemeMode _mode = preset;
+        ThemeMode _mode = themeModel.theme;
         return AlertDialog(
-          title: const Text("App theme"),
+          title: Text(localization!.settingsThemeHeadline),
           content: StatefulBuilder(
             builder: (context, setState) {
               return Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   RadioListTile<ThemeMode>(
-                    title: const Text("System theme"),
+                    title: Text(localization.settingsThemeSystem),
                     value: ThemeMode.system,
                     groupValue: _mode,
                     onChanged: (ThemeMode? value) {
@@ -66,7 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     },
                   ),
                   RadioListTile<ThemeMode>(
-                    title: const Text("Light"),
+                    title: Text(localization.settingsThemeLight),
                     value: ThemeMode.light,
                     groupValue: _mode,
                     onChanged: (ThemeMode? value) {
@@ -76,7 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     },
                   ),
                   RadioListTile<ThemeMode>(
-                    title: const Text("Dark"),
+                    title: Text(localization.settingsThemeDark),
                     value: ThemeMode.dark,
                     groupValue: _mode,
                     onChanged: (ThemeMode? value) {
@@ -94,12 +96,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 onPressed: () {
                   Navigator.pop(context, themeModel.theme);
                 },
-                child: const Text("Cancel")),
+                child: Text(localization.settingsCancel)),
             TextButton(
                 onPressed: () {
                   Navigator.pop(context, _mode);
                 },
-                child: const Text("Save")),
+                child: Text(localization.settingsSave)),
           ],
         );
       },
@@ -134,9 +136,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
         Localizations.of<AppLocalizations>(context, AppLocalizations);
 
     Map<ThemeMode, String> themeTranslations = {
-      ThemeMode.system: "System",
-      ThemeMode.dark: "Dark",
-      ThemeMode.light: "Light",
+      ThemeMode.system: localization!.settingsThemeSystem,
+      ThemeMode.dark: localization.settingsThemeLight,
+      ThemeMode.light: localization.settingsThemeLight,
     };
     return Scaffold(
       body: SingleChildScrollView(
@@ -159,11 +161,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               ListTile(
                 leading: const Icon(Icons.brightness_4_outlined),
-                title: const Text("Theme"),
-                subtitle: Text(themeTranslations[theme] ?? "System"),
+                title: Text(localization.settingsThemeHeadline),
+                subtitle: Text(themeTranslations[theme] ??
+                    localization.settingsThemeSystem),
                 onTap: () async {
                   ThemeMode? newTheme =
-                      await showThemeDialog(context, theme, themeModel);
+                      await showThemeDialog(context, themeModel);
                   if (newTheme != null) {
                     setState(() {
                       theme = newTheme;

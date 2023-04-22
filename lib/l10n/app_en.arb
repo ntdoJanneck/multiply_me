@@ -77,5 +77,11 @@
     "settingsAboutViewFontLicense": "Font (Roboto) license",
     "settingsViewImprintTitle": "Imprint",
     "settingsAboutViewTitle": "About",
-    "settingsImprintClose": "CLOSE"
+    "settingsImprintClose": "CLOSE",
+    "settingsThemeHeadline": "App theme",
+    "settingsThemeSystem": "System theme",
+    "settingsThemeLight": "Light theme",
+    "settingsThemeDark": "Dark theme",
+    "settingsSave": "Save",
+    "settingsCancel": "Cancel"
 }
