@@ -57,6 +57,9 @@ class _SolutionInputTextFieldState extends State<SolutionInputTextField> {
         ),
         onChanged: (value) {
           int max = _calculateDynamicMaxValue(widget.mathTask);
+          if (value == "") {
+            return;
+          }
           if (double.parse(value) > max) {
             widget.controller.text = max.toString();
           }

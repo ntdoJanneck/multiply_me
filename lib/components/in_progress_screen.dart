@@ -177,7 +177,6 @@ class _InProgressScreenState extends State<InProgressScreen> {
                       decoration: const ShapeDecoration(shape: CircleBorder()),
                       child: IconButton(
                         icon: const Icon(Icons.arrow_forward),
-                        color: Colors.white,
                         onPressed: () {
                           submitSolution(context);
                         },

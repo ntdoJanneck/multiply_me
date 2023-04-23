@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:multiply_me/classes/math_task.dart';
 import 'package:multiply_me/components/in_progress_screen.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import 'package:multiply_me/components/widgets/practise_screen_textfield.dart';
 import 'package:multiply_me/helpers/dialog_helper.dart';
 
 class MultiplicationTablesScreen extends StatefulWidget {
@@ -104,48 +105,28 @@ class _MultiplicationTablesScreenState
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  TextField(
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        labelText: localization.multiplicationTableTable),
+                  PractiseScreenInputTextField(
+                    label: localization.multiplicationTableTable,
+                    maxInput: 100,
                     controller: baseNumberController,
+                    disableFlexible: true,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          decoration: InputDecoration(
-                              border: const OutlineInputBorder(),
-                              labelText:
-                                  localization.multiplicationTableRangeA),
-                          controller: rangeANumberController,
-                        ),
-                      ),
+                      PractiseScreenInputTextField(
+                          label: localization.multiplicationTableRangeA,
+                          maxInput: 100,
+                          controller: rangeANumberController),
                       const SizedBox(
                         width: 10,
                       ),
-                      Flexible(
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          decoration: InputDecoration(
-                              border: const OutlineInputBorder(),
-                              labelText:
-                                  localization.multiplicationTableRangeB),
-                          controller: rangeBNumberController,
-                        ),
-                      )
+                      PractiseScreenInputTextField(
+                          label: localization.multiplicationTableRangeB,
+                          maxInput: 100,
+                          controller: rangeBNumberController),
                     ],
                   ),
                   const SizedBox(
