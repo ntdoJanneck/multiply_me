@@ -58,5 +58,6 @@
     "settingsThemeLight": "Hell",
     "settingsThemeDark": "Dunkel",
     "settingsSave": "Speichern",
-    "settingsCancel": "Abbrechen"
+    "settingsCancel": "Abbrechen",
+    "practiseScreenBaseStart": "Starten"
 }

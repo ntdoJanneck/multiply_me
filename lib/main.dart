@@ -34,12 +34,14 @@ class MultiplyMe extends StatelessWidget {
           darkTheme: ThemeData(
               fontFamily: "Roboto",
               useMaterial3: true,
-              colorScheme: darkColorScheme,
+              colorSchemeSeed: const Color(0xFF03a9f4),
+              // colorScheme: darkColorScheme,
               brightness: Brightness.dark),
           theme: ThemeData(
               fontFamily: "Roboto",
               useMaterial3: true,
-              colorScheme: lightColorScheme,
+              // colorScheme: lightColorScheme,
+              colorSchemeSeed: const Color(0xFF03a9f4),
               brightness: Brightness.light),
           themeMode: theme.theme,
           home: const MainApp(),

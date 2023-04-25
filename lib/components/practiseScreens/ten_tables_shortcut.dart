@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multiply_me/components/widgets/practise_screen_base.dart';
 
 import '../../classes/math_task.dart';
 import '../in_progress_screen.dart';
@@ -44,52 +45,21 @@ class _TenTablesShortcutState extends State<TenTablesShortcut> {
   Widget build(BuildContext context) {
     var localization =
         Localizations.of<AppLocalizations>(context, AppLocalizations);
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(localization!.multiplicationTableHeadline),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_rounded),
-          onPressed: () => Navigator.pop(context),
-        ),
+    List<Widget> screens = [
+      SwitchListTile(
+        title: Text(localization!.multiplicationTableRandomize),
+        secondary: const Icon(Icons.shuffle_rounded),
+        value: randomizeValue,
+        onChanged: (value) => {
+          setState(() {
+            randomizeValue = value;
+          })
+        },
       ),
-      body: Center(
-        child: SizedBox(
-          width: 500,
-          child: Form(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  SwitchListTile(
-                      title: Text(localization.multiplicationTableRandomize),
-                      secondary: const Icon(Icons.shuffle_rounded),
-                      value: randomizeValue,
-                      onChanged: (value) => {
-                            setState(() {
-                              randomizeValue = value;
-                            })
-                          }),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Ink(
-                    decoration: const ShapeDecoration(
-                        shape: CircleBorder(), color: Colors.green),
-                    child: IconButton(
-                      icon: const Icon(Icons.check),
-                      color: Colors.white,
-                      onPressed: () {
-                        startPractise();
-                      },
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
+    ];
+    return PractiseScreenBase(
+        title: localization.multiplicationTableHeadline,
+        children: screens,
+        onSubmit: () => startPractise());
   }
 }
