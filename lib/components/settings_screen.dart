@@ -137,7 +137,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     Map<ThemeMode, String> themeTranslations = {
       ThemeMode.system: localization!.settingsThemeSystem,
-      ThemeMode.dark: localization.settingsThemeLight,
+      ThemeMode.dark: localization.settingsThemeDark,
       ThemeMode.light: localization.settingsThemeLight,
     };
     return Scaffold(
