@@ -8,4 +8,8 @@ class MathTask {
     secondFigure = pSecondFigure;
     mathSign = pSign;
   }
+
+  double calculateResult() {
+    return firstFigure * secondFigure;
+  }
 }

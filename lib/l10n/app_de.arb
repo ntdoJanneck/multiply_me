@@ -53,10 +53,11 @@
     "settingsViewImprintTitle": "Impressum",
     "settingsAboutViewTitle": "Über diese App",
     "settingsImprintClose": "SCHLIEßEN",
-    "settingsThemeHeadline": "App design",
+    "settingsThemeHeadline": "App Design",
     "settingsThemeSystem": "Systemeinstellung",
     "settingsThemeLight": "Hell",
     "settingsThemeDark": "Dunkel",
     "settingsSave": "Speichern",
-    "settingsCancel": "Abbrechen"
+    "settingsCancel": "Abbrechen",
+    "practiseScreenBaseStart": "Starten"
 }

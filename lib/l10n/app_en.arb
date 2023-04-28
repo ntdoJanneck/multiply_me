@@ -83,5 +83,6 @@
     "settingsThemeLight": "Light theme",
     "settingsThemeDark": "Dark theme",
     "settingsSave": "Save",
-    "settingsCancel": "Cancel"
+    "settingsCancel": "Cancel",
+    "practiseScreenBaseStart": "Start"
 }

@@ -6,6 +6,7 @@ import 'package:multiply_me/classes/math_result.dart';
 import 'package:multiply_me/classes/math_task.dart';
 import 'package:multiply_me/components/finished_screen.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import 'package:multiply_me/components/widgets/solution_textfield.dart';
 
 class InProgressScreen extends StatefulWidget {
   const InProgressScreen({Key? key, required this.taskList}) : super(key: key);
@@ -161,24 +162,13 @@ class _InProgressScreenState extends State<InProgressScreen> {
                     const SizedBox(
                       width: 10,
                     ),
-                    SizedBox(
-                      width: 200,
-                      child: TextField(
-                        focusNode: answerFocus,
-                        autofocus: true,
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                        onSubmitted: (value) {
-                          submitSolution(context);
-                        },
-                        controller: answerInputController,
-                        style: const TextStyle(fontSize: 20.0),
-                      ),
+                    SolutionInputTextField(
+                      mathTask: widget.taskList[currentIndex],
+                      focusNode: answerFocus,
+                      controller: answerInputController,
+                      onSubmit: (value) {
+                        submitSolution(context);
+                      },
                     ),
                     const SizedBox(
                       width: 10,
@@ -187,7 +177,6 @@ class _InProgressScreenState extends State<InProgressScreen> {
                       decoration: const ShapeDecoration(shape: CircleBorder()),
                       child: IconButton(
                         icon: const Icon(Icons.arrow_forward),
-                        color: Colors.white,
                         onPressed: () {
                           submitSolution(context);
                         },

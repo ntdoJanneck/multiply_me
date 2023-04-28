@@ -137,7 +137,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     Map<ThemeMode, String> themeTranslations = {
       ThemeMode.system: localization!.settingsThemeSystem,
-      ThemeMode.dark: localization.settingsThemeLight,
+      ThemeMode.dark: localization.settingsThemeDark,
       ThemeMode.light: localization.settingsThemeLight,
     };
     return Scaffold(
@@ -149,7 +149,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: [
               ListTile(
                 leading: const Icon(Icons.delete_forever_outlined),
-                title: Text(localization!.settingsDeleteStatisticsDataTitle),
+                title: Text(localization.settingsDeleteStatisticsDataTitle),
                 onTap: () => {
                   showConfirmationDialog(
                       localization.multiplicationTableErrorHeadline,
