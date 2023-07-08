@@ -175,6 +175,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   }
                 },
               ),
+              ListTile(
+                leading: const Icon(Icons.abc),
+                title: const Text("Changelog"),
+                onTap: () {
+                  log("message");
+                },
+              ),
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.description_outlined),

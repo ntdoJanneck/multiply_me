@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:multiply_me/colors/lib_color_schemes.g.dart';
 import 'package:multiply_me/theme_provider/theme_model.dart';
 import 'package:provider/provider.dart';
 import 'components/practise_menu.dart';
