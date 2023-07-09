@@ -176,17 +176,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 },
               ),
               ListTile(
-                leading: const Icon(Icons.abc),
-                title: const Text("Changelog"),
-                onTap: () {
-                  log("message");
-                },
+                leading: const Icon(Icons.update),
+                title: Text(localization.settingsChangelogHeadline),
+                onTap: () => MarkdownDialog.buildMarkdownModal(
+                    context,
+                    localization.settingsChangelogFile,
+                    localization.settingsChangelogHeadline),
               ),
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.description_outlined),
                 title: Text(localization.settingsViewImprintTitle),
-                onTap: () => ImprintDialog.buildImprint(context),
+                onTap: () => MarkdownDialog.buildMarkdownModal(context,
+                    "imprint.md", localization.settingsViewImprintTitle),
               ),
               ListTile(
                 leading: const Icon(Icons.info_outline),

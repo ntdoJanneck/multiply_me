@@ -59,5 +59,7 @@
     "settingsThemeDark": "Dunkel",
     "settingsSave": "Speichern",
     "settingsCancel": "Abbrechen",
-    "practiseScreenBaseStart": "Starten"
+    "practiseScreenBaseStart": "Starten",
+    "settingsChangelogFile": "changelog_de.md",
+    "settingsChangelogHeadline": "Änderungsverlauf"
 }
