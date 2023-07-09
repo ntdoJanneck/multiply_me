@@ -1,13 +1,8 @@
-import 'dart:developer';
-import 'dart:ffi';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:multiply_me/classes/math_result.dart';
 import 'package:multiply_me/classes/math_task.dart';
-import 'package:multiply_me/components/finished_screen.dart';
-import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
 class SolutionInputTextField extends StatefulWidget {
   const SolutionInputTextField({
