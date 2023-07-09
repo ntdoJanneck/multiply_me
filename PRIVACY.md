@@ -9,7 +9,7 @@ I do not collect, store or share any data through this app, be it personal data 
 If you contact me via E-Mail, your name and E-Mail address is only used to reply to your specific inquiry. They will not be used for any marketing purposes.
 
 ## Contact
-If you have any questions, suggestions or other remarks about this privacy policy or the app in general, you can contact me via the E-Mail address janneckf03@gmail.com.
+If you have any questions, suggestions or other remarks about this privacy policy or the app in general, you can contact me via the E-Mail address contact@janneck-franke.de
 
 ---
-##### Last updated: 10.03.2023
+##### Last updated: 09.07.2023
