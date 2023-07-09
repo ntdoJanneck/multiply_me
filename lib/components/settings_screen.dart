@@ -1,5 +1,3 @@
-import "dart:developer";
-
 import 'package:flutter/material.dart';
 import "package:flutter_gen/gen_l10n/app_localizations.dart";
 import 'package:multiply_me/theme_provider/theme_model.dart';
@@ -198,7 +196,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     context: context,
                     applicationName: "MultiplyMe",
                     applicationLegalese: localization.settingsAboutViewLegalese,
-                    applicationVersion: "1.0.1",
+                    applicationVersion: "1.1.0",
                     children: [
                       const SizedBox(
                         height: 15,
