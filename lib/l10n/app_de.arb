@@ -52,5 +52,14 @@
     "settingsAboutViewFontLicense": "Schriftart (Roboto) Lizenz",
     "settingsViewImprintTitle": "Impressum",
     "settingsAboutViewTitle": "Über diese App",
-    "settingsImprintClose": "SCHLIEßEN"
+    "settingsImprintClose": "SCHLIEßEN",
+    "settingsThemeHeadline": "App Design",
+    "settingsThemeSystem": "Systemeinstellung",
+    "settingsThemeLight": "Hell",
+    "settingsThemeDark": "Dunkel",
+    "settingsSave": "Speichern",
+    "settingsCancel": "Abbrechen",
+    "practiseScreenBaseStart": "Starten",
+    "settingsChangelogFile": "changelog_de.md",
+    "settingsChangelogHeadline": "Änderungsverlauf"
 }

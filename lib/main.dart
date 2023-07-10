@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:multiply_me/colors/lib_color_schemes.g.dart';
+import 'package:multiply_me/theme_provider/theme_model.dart';
+import 'package:provider/provider.dart';
 import 'components/practise_menu.dart';
 import 'components/settings_screen.dart';
 import 'components/statistics_screen.dart';
@@ -15,28 +16,36 @@ class MultiplyMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale("en", ""),
-        Locale("de", ""),
-      ],
-      darkTheme: ThemeData(
-          fontFamily: "Roboto",
-          useMaterial3: true,
-          colorScheme: darkColorScheme,
-          brightness: Brightness.dark),
-      theme: ThemeData(
-          fontFamily: "Roboto",
-          useMaterial3: true,
-          colorScheme: lightColorScheme,
-          brightness: Brightness.light),
-      home: const MainApp(),
+    return ChangeNotifierProvider(
+      create: (_) => ThemeModel(),
+      child: Consumer<ThemeModel>(
+        builder: (context, theme, child) => MaterialApp(
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale("en", ""),
+            Locale("de", ""),
+          ],
+          darkTheme: ThemeData(
+              fontFamily: "Roboto",
+              useMaterial3: true,
+              colorSchemeSeed: const Color(0xFF03a9f4),
+              // colorScheme: darkColorScheme,
+              brightness: Brightness.dark),
+          theme: ThemeData(
+              fontFamily: "Roboto",
+              useMaterial3: true,
+              // colorScheme: lightColorScheme,
+              colorSchemeSeed: const Color(0xFF03a9f4),
+              brightness: Brightness.light),
+          themeMode: theme.theme,
+          home: const MainApp(),
+        ),
+      ),
     );
   }
 }
