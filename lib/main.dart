@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import "package:flutter_gen/gen_l10n/app_localizations.dart";
+import "package:flutter_localizations/flutter_localizations.dart";
 import 'package:multiply_me/theme_provider/theme_model.dart';
 import 'package:provider/provider.dart';
+
 import 'components/practise_menu.dart';
 import 'components/settings_screen.dart';
 import 'components/statistics_screen.dart';
-import "package:flutter_localizations/flutter_localizations.dart";
-import "package:flutter_gen/gen_l10n/app_localizations.dart";
 
 void main() {
   runApp(const MultiplyMe());
@@ -77,24 +78,20 @@ class _MainAppState extends State<MainApp> {
         title: Text(localization!.appTitle),
       ),
       body: tabs[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.assessment_outlined),
-            label: localization.statisticsTitle,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.assignment_outlined),
-            label: localization.practiseTitle,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.settings_outlined),
-            label: localization.settingsTitle,
-          )
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _currentIndex,
+        destinations: [
+          NavigationDestination(
+              icon: const Icon(Icons.assessment_outlined),
+              label: localization.statisticsTitle),
+          NavigationDestination(
+              icon: const Icon(Icons.assignment_outlined),
+              label: localization.practiseTitle),
+          NavigationDestination(
+              icon: const Icon(Icons.settings_outlined),
+              label: localization.settingsTitle),
         ],
-        onTap: (index) {
+        onDestinationSelected: (index) {
           setState(() {
             _currentIndex = index;
           });
